@@ -1,7 +1,14 @@
 class Backstage
 
-  def initialize
+  attr_reader :item
+
+  def initialize(item)
     @item = item
+  end
+
+  def update
+    update_quality
+    update_sell_in
   end
 
   def update_quality
@@ -11,6 +18,10 @@ class Backstage
     else item.quality = 0
     end
     item.quality = 50 if item.quality >= 50
+  end
+
+  def update_sell_in
+    item.sell_in -= 1
   end
 
 end
