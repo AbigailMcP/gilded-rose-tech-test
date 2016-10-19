@@ -26,8 +26,7 @@ class GildedRose
   attr_reader :item
 
   ITEMS = { "Aged Brie" => AgedBrie, "Sulfuras, Hand of Ragnaros" => Sulfuras,
-            "Backstage passes to a TAFKAL80ETC concert" => Backstage,
-            "Conjured" => Conjured
+            "Backstage passes to a TAFKAL80ETC concert" => Backstage, "Conjured" => Conjured
           }.freeze
 
   def special_item?(item)

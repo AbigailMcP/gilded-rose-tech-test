@@ -11,6 +11,8 @@ class Sulfuras
     update_sell_in
   end
 
+  private
+
   def update_quality
 
   end

@@ -11,6 +11,8 @@ class RegularItem
     update_sell_in
   end
 
+  private
+
   def update_quality
     unless item.quality == 0
       item.sell_in >= 0 ? item.quality -= 1 : item.quality -= 2

@@ -11,6 +11,8 @@ class Backstage
     update_sell_in
   end
 
+  private
+
   def update_quality
     if item.sell_in > 10 then item.quality += 1
     elsif item.sell_in > 5 then item.quality += 2

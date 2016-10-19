@@ -11,6 +11,8 @@ class AgedBrie
     update_sell_in
   end
 
+  private
+
   def update_quality
     if item.quality < 50
       item.sell_in >= 0 ? item.quality += 1 : item.quality += 2
