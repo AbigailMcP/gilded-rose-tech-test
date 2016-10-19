@@ -4,6 +4,7 @@ require_relative 'backstage'
 require_relative 'sulfuras'
 require_relative 'conjured'
 require_relative 'regular_item'
+require_relative 'general_item'
 
 class GildedRose
 
@@ -13,12 +14,6 @@ class GildedRose
 
   def update
     @items.each { |item| item_of_type(item).update }
-  end
-
-  def update_quality_regular(item)
-    unless item.quality == 0
-      item.sell_in >= 0 ? item.quality -= 1 : item.quality -= 2
-    end
   end
 
   private

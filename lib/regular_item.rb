@@ -1,15 +1,6 @@
-class RegularItem
+require_relative 'general_item'
 
-  attr_reader :item
-
-  def initialize(item)
-    @item = item
-  end
-
-  def update
-    update_quality
-    update_sell_in
-  end
+class RegularItem  < GeneralItem
 
   private
 
