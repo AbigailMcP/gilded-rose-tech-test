@@ -128,4 +128,18 @@ describe GildedRose do
       end
     end
   end
+
+  context 'when item is Conjured' do
+    it 'decreases quality by 2 if sell_in >= 0' do
+      items = [Item.new("Conjured", 1, 2)]
+      GildedRose.new(items).update
+      expect(items[0].quality).to eq 0
+    end
+
+    it 'decreases quality by 4 if sell_in >= 0' do
+      items = [Item.new("Conjured", -1, 4)]
+      GildedRose.new(items).update
+      expect(items[0].quality).to eq 0
+    end
+  end
 end
