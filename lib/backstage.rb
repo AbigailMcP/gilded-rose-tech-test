@@ -10,7 +10,7 @@ class Backstage  < GeneralItem
     elsif item.sell_in > 0 then item.quality += 3
     else item.quality = 0
     end
-    item.quality = 50 if item.quality >= 50
+    item.quality = 50 if item.quality > 50
   end
 
   def update_sell_in

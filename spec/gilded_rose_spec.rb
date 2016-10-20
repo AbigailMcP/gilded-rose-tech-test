@@ -56,8 +56,14 @@ describe GildedRose do
       expect(items[0].quality).to eq 3
     end
 
-    it "maximum quality is 50" do
+    it "maximum quality is 50 when sell_in > 0" do
       items = [Item.new("Aged Brie", 1, 50)]
+      GildedRose.new(items).update
+      expect(items[0].quality).to eq 50
+    end
+
+    it "maximum quality is 50 when sell_in < 0" do
+      items = [Item.new("Aged Brie", -1, 49)]
       GildedRose.new(items).update
       expect(items[0].quality).to eq 50
     end
@@ -138,6 +144,12 @@ describe GildedRose do
 
     it 'decreases quality by 4 if sell_in >= 0' do
       items = [Item.new("Conjured", -1, 4)]
+      GildedRose.new(items).update
+      expect(items[0].quality).to eq 0
+    end
+
+    it 'quality never decreases below 50' do
+      items = [Item.new("Conjured", -1, 3)]
       GildedRose.new(items).update
       expect(items[0].quality).to eq 0
     end
